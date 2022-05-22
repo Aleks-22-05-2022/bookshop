@@ -6,9 +6,9 @@ if ($_GET['result'] != ''){
 	$query_search = trim($query_search); 
     $query_search = mysql_real_escape_string($query_search);
     $query_search =htmlspecialchars($query_search);?>
-	<a href="project/search.php?result=<?php echo $query_search;?>"></a>
+	<a href="search.php?result=<?php echo $query_search;?>"></a>
 	<?php
-	
+	$cat = $_GET['cat'];
 }
 ?>
 
@@ -22,7 +22,7 @@ if ($_GET['result'] != ''){
     <body>
         <header>
             <a href="../index.php"><img src="photo/logoza_ru.png" class="logo"></a>
-			<form action="project/search.php?result=<?php echo $query_search;?>">
+			<form action="search.php?result=<?php echo $query_search;?>">
 				<input type="text" placeholder="Поиск..." class="search" id="result" name="result">
             	<input type="submit" value="&#128269;" class="searchSub" >
 			</form>
@@ -34,14 +34,15 @@ if ($_GET['result'] != ''){
             </div>
         </header>
         <nav class="menu">
-            <a href="">Классика</a>
-            <a href="">Психология</a>
-            <a href="">Романы</a>
-            <a href="">Фэнтези</a>
-            <a href="">Детская литература</a>
+            <a href="categories.php?cat=Classic">Классика</a>
+            <a href="categories.php?cat=Psihologes">Психология</a>
+            <a href="categories.php?cat=Novel">Романы</a>
+            <a href="categories.php?cat=Fantasy">Фэнтези</a>
+            <a href="categories.php?cat=Children">Детская литература</a>
         </nav>
-        <h1 class="new">Поиск по запросу "<?php echo $_GET['result']?>"</h1>
+        <h1 class="new"><?php echo $cat = $_GET['cat'];?></h1>
 		<?php 
+			
 			require_once ("Connections/shop.php");
 			$link = mysqli_connect($host, $username, $password);
 			$select = mysqli_select_db($link, $db);
@@ -53,34 +54,20 @@ if ($_GET['result'] != ''){
 			$author = array();
 			$price = array();
 		    $col = 0;
-			$word = $_GET['result'];
-			$lenword = strlen($lenword);
-			$words = explode(' ', $word);
-			foreach ($words as $word1){
-				$where_list[] = " name_products LIKE '%$word1%'";
-				$where_list[] = " author LIKE '%$word1%'";
-			}
-			$where_clause = implode (' OR ', $where_list); 
-			if (!empty($where_clause)){
-				$query .=" WHERE $where_clause";
-			}
-			$res_query = mysqli_query($link, $query);
-			while ($book = mysqli_fetch_array($res_query)){
+			while ($book = mysqli_fetch_array($select)){
+				if ($book['categories_products'] == $cat){
 					$col += 1;
 					$photo[$col] = $book['url_photo']; 
 					$id[$col] = $book['id']; 
 					$name[$col] = $book['name_products']; 
 					$author[$col] = $book['author']; 
 					$price[$col] = $book['price_products']; 
-			}
-			if ($col == 0){
-				?><p>По вашему запросу ничего не найдено<p><?php
-			}
-			?>
+				}
+			}?>
 			<div class='block'>
 				<?php 
 				for($i = 1; $i < $col + 1; $i++){?>
-					<a href="str.php?book=<?php echo $id[$i];?>">
+					<a href="project/str.php?book=<?php echo $id[$i];?>">
 					<div class='tovar'>
 						<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
 						<p class=NameBook><?php echo $name[$i], "<br>";?></p>
@@ -90,9 +77,12 @@ if ($_GET['result'] != ''){
 							<input type="button" value="Купить" onclick="<?php Basket($id[$i]); ?>"> <!--Добавление в корзину корзину-->
 						</div>
 					</div></a><?php 
-			} ?>
-			</div>
-			
+			} 
+		?>
+		</div>
+		
+		<footer>
+		</footer>
     </body>
 </html>
 <!-- корзина -->

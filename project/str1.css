@@ -1,0 +1,385 @@
+body{
+	/*background: #f0f5f2;*/
+}
+h3{
+	color:#829D93;
+}
+.logo{
+    width: 310px;
+    height: auto;
+    margin: 30px;
+    margin-right: 50px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	background: #ADC2B5;
+	
+}
+
+.search{
+    height: 40px;
+    width: 460px;
+    color: #ADC2B5;
+    font-size: large;
+    padding-left: 5px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.searchSub {
+    height: 45px;
+    width: 45px;
+    margin-right: 50px;
+}
+
+.login{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    margin-left: 10px;
+}
+
+.log{
+    font-size: large;
+    margin-right: 30px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imgblock{
+    position: relative;
+    text-align: center;
+}
+
+.imgblock img{
+    height: 45px;
+    width: 45px;
+}
+.imgblock span{
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+}
+
+
+.menu{
+    text-align: center;
+	background: #ADC2B5;
+	height: 50px;
+}
+
+.menu a{
+    text-decoration: none; 
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+}
+.quantity_inner * {
+    box-sizing: border-box;
+}
+
+.quantity_inner {
+    display: flex;
+    justify-content: center;
+}
+
+.quantity_inner .bt_minus,
+.quantity_inner .bt_plus,
+.quantity_inner .quantity {
+    color: #BFE2FF;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin: 10px 2px;
+    border-radius: 10px;
+    border: 4px solid #BFE2FF;
+    background: #337AB7;
+    cursor: pointer;
+    outline: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.quantity_inner .quantity {
+    width: 50px;
+    text-align: center;
+    font-size: 22px;
+    color: #FFF;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.quantity_inner .bt_minus svg,
+.quantity_inner .bt_plus svg {
+    stroke: #BFE2FF;
+    stroke-width: 4;
+    transition: 0.5s;
+    margin: 4px;
+}
+
+.quantity_inner .bt_minus:hover svg,
+.quantity_inner .bt_plus:hover svg {
+    stroke: #FFF;
+}
+
+.leftpic {
+    float: left;
+    /* Выравнивание по правому краю */
+    margin: 0 0 5px 5px;
+    /* Отступы вокруг фотографии */
+}
+
+TD.leftcol {
+    width: 110px;
+    /* Ширина левой колонки с рисунком */
+    vertical-align: top;
+    /* Выравнивание по верхнему краю */
+}
+
+.r {
+    float: left;
+}
+
+
+.te {
+    float: left;
+}
+
+p.b {
+    font-size: 24px;
+    font-weight: 500;
+    color: #829D93;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
+}
+
+p.a {
+    font-size: 16px;
+    font-weight: normal;
+    color: #787878;
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left {
+    float: left;
+    /* Выравнивание по левому краю */
+    margin-left: 5em;
+    /* Отступ справа и снизу */
+}
+
+.right {
+    float: right;
+    /* Выравнивание по правому краю */
+    margin: 0 0 1em 1em;
+    /* Отступ снизу и слева */
+}
+
+.hr {
+    border: none;
+    /* Убираем границу */
+    color: black;
+    /* Цвет линии для IE6-7 */
+    height: 4px;
+    /* Толщина линии */
+}
+
+p.c {
+    font-size: 16px;
+    line-height: 1.32;
+    font-weight: normal;
+    color: #787878;
+    margin-top: 4px;
+}
+
+.rating-area {
+    overflow: hidden;
+    width: 265px;
+    margin: 0 auto;
+    float: left;
+}
+
+.rating-area:not(:checked)>input {
+    display: none;
+}
+
+.rating-area:not(:checked)>label {
+    float: right;
+    width: 42px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked)>label:before {
+    content: '★';
+}
+
+.rating-area>input:checked~label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+}
+
+.rating-area:not(:checked)>label:hover,
+.rating-area:not(:checked)>label:hover~label {
+    color: gold;
+}
+
+.rating-area>input:checked+label:hover,
+.rating-area>input:checked+label:hover~label,
+.rating-area>input:checked~label:hover,
+.rating-area>input:checked~label:hover~label,
+.rating-area>label:hover~input:checked~label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area>label:active {
+    position: relative;
+}
+
+.rating-widget__button {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    font-family: inherit;
+    color: inherit;
+    font-size: 16px;
+    line-height: 10px;
+    display: grid;
+    grid-template-areas: "icon main other";
+    align-items: center;
+    color: #242424;
+    transition: color .3s;
+    text-align: left;
+    content: '★';
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.rating>span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+}
+
+.rating>span:hover:before,
+.rating>span:hover~span:before {
+    content: "\2605";
+    position: absolute;
+}
+
+.flex {
+    margin-right: 5em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.flex1 {
+    margin-right: 5em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.tablica {
+    width: 40%;
+    color: #595757;
+}
+
+.sidebar {
+    background-color: #adc2b5;
+    width: 130px;
+    height: 240px;
+    padding: 38px;
+    margin-left: 10px;
+    font-size: 20px;
+    float: right;
+    /* обтекание справа */
+}
+
+.sidebar1 {
+    background-color: #adc2b5;
+    width: 140px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 30px;
+    float: right;
+    /* обтекание справа */
+}
+
+.knopka {
+    background-color: #adc2b5;
+    width: 140px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+    float: right;
+    /* обтекание справа */
+}
+
+.izb {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.d {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 60px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.m {
+    float: right;
+}
+
+.tablica1 {
+    font-weight: bold;
+}
+
+.annot {
+    font-size: large;
+    text-align: left;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    max-height: 65.52px;
+	color:#829D93;
+}
+.z{
+    float: left;
+}
+.er{
+    float: left;
+    margin-left: 5em;
+    margin-right: 5em;
+}

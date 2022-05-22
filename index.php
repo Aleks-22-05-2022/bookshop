@@ -8,7 +8,6 @@ if ($_GET['result'] != ''){
     $query_search =htmlspecialchars($query_search);?>
 	<a href="project/search.php?result=<?php echo $query_search;?>"></a>
 	<?php
-	
 }
 ?>
 
@@ -34,11 +33,11 @@ if ($_GET['result'] != ''){
             </div>
         </header>
         <nav class="menu">
-            <a href="">Классика</a>
-            <a href="">Психология</a>
-            <a href="">Романы</a>
-            <a href="">Фэнтези</a>
-            <a href="">Детская литература</a>
+            <a href="project/categories.php?cat=Classic">Классика</a>
+            <a href="project/categories.php?cat=Psihologes">Психология</a>
+            <a href="project/categories.php?cat=Novel">Романы</a>
+            <a href="project/categories.php?cat=Fantasy">Фэнтези</a>
+            <a href="project/categories.php?cat=Children">Детская литература</a>
         </nav>
         <h1 class="new">Новинки литературы</h1>
 		<?php 
@@ -80,7 +79,7 @@ if ($_GET['result'] != ''){
 			<div class='block'>
 				<?php 
 				for($i = 1; $i < $col + 1; $i++){?>
-					<a href="#">
+					<a href="project/str.php?book=<?php echo $id[$i];?>">
 					<div class='tovar'>
 						<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
 						<p class=NameBook><?php echo $name[$i], "<br>";?></p>
@@ -98,7 +97,7 @@ if ($_GET['result'] != ''){
 			<div class='block'>
 			<?php 
 				for($i = 1; $i < $col_b + 1; $i++){?>
-					<a href="#">
+					<a href="str.php?book=<?php echo $id[$i];?>">
 					<div class='tovar'>
 						<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
 						<p class=NameBook><?php echo $name_b[$i], "<br>";?></p>
