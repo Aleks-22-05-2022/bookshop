@@ -1,6 +1,9 @@
 body{
 	/*background: #f0f5f2;*/
 }
+h3{
+	color:#829D93;
+}
 .logo{
     width: 310px;
     height: auto;
@@ -238,8 +241,9 @@ header{
 .slide-title {
 	/* Шрифт */
 	font: bold 16px monospace;
-	/* Указываем, что элемент блочный */
+	/* Указываем, что элемен блочный */
 	display: block;
+	text-align: center;
 }
 
 /* навигация вперед/назад */
@@ -259,7 +263,7 @@ header{
 }
 .next-slide {
 	right: 0;
-	background: #f0f5f2 url(bg/right-arrow.png) 9px 40% no-repeat;
+	background: #FFFFFF url(bg/right-arrow.png) 9px 40% no-repeat;
 }
 
 
