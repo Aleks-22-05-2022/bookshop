@@ -6,7 +6,7 @@ if ($_GET['result'] != ''){
 	$query_search = trim($query_search); 
     $query_search = mysql_real_escape_string($query_search);
     $query_search =htmlspecialchars($query_search);?>
-	<a href="search.php?result=<?php echo $query_search;?>"></a>
+	<a href="project/search.php?result=<?php echo $query_search;?>"></a>
 	<?php
 	
 }
@@ -17,19 +17,19 @@ if ($_GET['result'] != ''){
     <head>
         <meta charset="UTF-8">
         <title>Читай</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="project/style.css">
     </head>
     <body>
         <header>
-            <a href=""><img src="photo/logoza_ru.png" class="logo"></a>
-			<form action="search.php?result=<?php echo $query_search;?>">
+            <a href=""><img src="project/photo/logoza_ru.png" class="logo"></a>
+			<form action="project/search.php?result=<?php echo $query_search;?>">
 				<input type="text" placeholder="Поиск..." class="search" id="result" name="result">
             	<input type="submit" value="&#128269;" class="searchSub" >
 			</form>
-            <img src="photo/cabinet.png" class="login"> 
+            <img src="project/photo/cabinet.png" class="login"> 
             <a href="" class="log">Войти</a>
             <div class="imgblock">
-                <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
+                <a href=""><img src="project/photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
                 <span>0<?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
             </div>
         </header>
@@ -42,9 +42,8 @@ if ($_GET['result'] != ''){
         </nav>
         <h1 class="new">Новинки литературы</h1>
 		<?php 
-			require_once ("Connections/shop.php");
-			$link = mysqli_connect ('localhost', 'admin', 'admin'); 
-			$db = "book_shop";
+			require_once ("project/Connections/shop.php");
+			$link = mysqli_connect($host, $username, $password);
 			$select = mysqli_select_db($link, $db);
 			$query = 'select * from products';
 			$select = mysqli_query($link, $query);
