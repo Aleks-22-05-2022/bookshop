@@ -67,7 +67,7 @@ if ($_GET['result'] != ''){
 			<div class='block'>
 				<?php 
 				for($i = 1; $i < $col + 1; $i++){?>
-					<a href="project/str.php?book=<?php echo $id[$i];?>">
+					<a href="str.php?book=<?php echo $id[$i];?>">
 					<div class='tovar'>
 						<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
 						<p class=NameBook><?php echo $name[$i], "<br>";?></p>

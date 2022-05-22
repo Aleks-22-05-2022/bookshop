@@ -33,11 +33,11 @@ if ($_GET['result'] != ''){
             </div>
         </header>
         <nav class="menu">
-            <a href="">Классика</a>
-            <a href="">Психология</a>
-            <a href="">Романы</a>
-            <a href="">Фэнтези</a>
-            <a href="">Детская литература</a>
+            <a href="categories.php?cat=Classic">Классика</a>
+            <a href="categories.php?cat=Psihologes">Психология</a>
+            <a href="categories.php?cat=Novel">Романы</a>
+            <a href="categories.php?cat=Fantasy">Фэнтези</a>
+            <a href="categories.php?cat=Children">Детская литература</a>
         </nav>
 		<div class="partners">
 		<h3>Доставка и оплата</h3>
