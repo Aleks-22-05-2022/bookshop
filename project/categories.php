@@ -74,7 +74,7 @@ if ($_GET['result'] != ''){
 						<p class="Author"><?php echo $author[$i], '<br>';?></p>
 						<div class="button">
 							<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
-							<input type="button" value="Купить" onclick="<?php Basket($id[$i]); ?>"> <!--Добавление в корзину корзину-->
+							<input type="button" value="Купить" > <!--Добавление в корзину корзину-->
 						</div>
 					</div></a><?php 
 			} 

@@ -45,7 +45,7 @@ if ($_GET['result'] != ''){
 			$link = mysqli_connect($host, $username, $password);
 			$select = mysqli_select_db($link, $db);
 			$query = 'select * from products';
-			$select = mysqli_query($link, $query);
+			$select_ = mysqli_query($link, $query);
 			$photo = array();
 			$id = array();
 			$name = array();
@@ -58,7 +58,7 @@ if ($_GET['result'] != ''){
 			$price_b = array();
 		    $col = 0;
 		 	$col_b = 0;
-			while ($book = mysqli_fetch_array($select)){
+			while ($book = mysqli_fetch_array($select_)){
 				if ($book['year_publication'] == 2022){
 					$col += 1;
 					$photo[$col] = $book['url_photo']; 
@@ -75,41 +75,46 @@ if ($_GET['result'] != ''){
 					$author_b[$col_b] = $book['author']; 
 					$price_b[$col_b] = $book['price_products']; 
 				}
-			}?>
-			<div class='block'>
-				<?php 
-				for($i = 1; $i < $col + 1; $i++){?>
-					<a href="project/str.php?book=<?php echo $id[$i];?>">
-					<div class='tovar'>
-						<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
-						<p class=NameBook><?php echo $name[$i], "<br>";?></p>
-						<p class="Author"><?php echo $author[$i], '<br>';?></p>
-						<div class="button">
-							<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
-							<input type="button" value="Купить" onclick="<?php Basket($id[$i]); ?>"> <!--Добавление в корзину корзину-->
-						</div>
-					</div></a><?php 
-			} 
+			}
 		?>
+		<div class='block'>
+			<?php 
+			for($i = 1; $i < $col + 1; $i++){?>
+				<a href="project/str.php?book=<?php echo $id[$i];?>">
+				<div class='tovar'>
+					<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
+					<p class=NameBook><?php echo $name[$i], "<br>";?></p>
+					<p class="Author"><?php echo $author[$i], '<br>';?></p>
+					<div class="button">
+						<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
+						<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
+					</div>
+				</div>
+				</a>
+			<?php 
+			} 
+			?>
 		</div>
 		
 		<h1 class="new">Бесселеры</h1>	
-			<div class='block'>
+		<div class='block'>
 			<?php 
-				for($i = 1; $i < $col_b + 1; $i++){?>
-					<a href="str.php?book=<?php echo $id[$i];?>">
-					<div class='tovar'>
-						<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
-						<p class=NameBook><?php echo $name_b[$i], "<br>";?></p>
-						<p class="Author"><?php echo $author_b[$i], '<br>';?></p>
-						<div class="button">
-							<p class="Price"><?php echo $price_b[$i], " Рублей <br>";?> </p>
-							<input type="button" value="Купить" onclick="<?php Basket($id_b[$i]); ?>"> <!--Добавление в корзину корзину-->
-						</div>
-					</div></a><?php 
-				} 
+			for($i = 1; $i < $col_b + 1; $i++){?>
+				<a href="str.php?book=<?php echo $id[$i];?>">
+				<div class='tovar'>
+					<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
+					<p class=NameBook><?php echo $name_b[$i], "<br>";?></p>
+					<p class="Author"><?php echo $author_b[$i], '<br>';?></p>
+					<div class="button">
+						<p class="Price"><?php echo $price_b[$i], " Рублей <br>";?> </p>
+						<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
+					</div>
+				</div>
+				</a>
+			<?php 
+			} 
 			?>
-			</div>
+		</div>
 		<footer>
 		</footer>
     </body>
