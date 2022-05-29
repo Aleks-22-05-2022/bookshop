@@ -289,15 +289,15 @@ p.c {
 
 .flex {
     margin-right: 5em;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 .flex1 {
     margin-right: 5em;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 
 .tablica {
