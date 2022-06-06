@@ -103,6 +103,7 @@ header{
 .NameBook{
 	margin: 5px;
 	xmax-width: 30ch;
+	color: #426643;
 	font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
@@ -115,6 +116,7 @@ header{
 .Price{
 	font-family: Comic Sans MS, Comic Sans, cursive;
 	font-weight: 900;
+	color: #426643;
 }
 
 .tovar{
@@ -145,9 +147,14 @@ header{
 	justyfy-items: stretch;
 }
 
-.tovar a{
+.block a{
 	text-decoration: none;
 }
+
+.slide-wrap a{
+	text-decoration: none;
+}
+
 .tovar input{
 	background: #ADC2B5;
 	height: 40px;
@@ -202,7 +209,7 @@ header{
 /* Slider */
 .slider {
 	/* Ширина контейнера */
-	width: 1200px;
+	width: 1220px;
 	/* Внешние тступы сверху и снизу */
 	margin: 10px auto;
 	/* Внутренние отступы для ссылок navy */

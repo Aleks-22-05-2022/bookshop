@@ -1,16 +1,4 @@
-<!-- поиск -->
 
-<?php  
-if ($_GET['result'] != ''){
-	$query_search = $_GET['result'];
-	$query_search = trim($query_search); 
-    $query_search = mysql_real_escape_string($query_search);
-    $query_search =htmlspecialchars($query_search);?>
-	<a href="search.php?result=<?php echo $query_search;?>"></a>
-	<?php
-	$cat = $_GET['cat'];
-}
-?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -40,7 +28,21 @@ if ($_GET['result'] != ''){
             <a href="categories.php?cat=Fantasy">Фэнтези</a>
             <a href="categories.php?cat=Children">Детская литература</a>
         </nav>
-        <h1 class="new"><?php echo $cat = $_GET['cat'];?></h1>
+        <h1 class="new"><?php 
+			$cat = $_GET['cat'];
+			if ($cat == 'Classic'){
+				echo 'Классика';
+			}elseif ($cat == 'Psihologes'){
+				echo 'Психология';
+			}elseif ($cat == 'Novel'){
+				echo 'Романы';
+			}elseif ($cat == 'Fantasy'){
+				echo 'Фэнтези';
+			}elseif ($cat == 'Children'){
+				echo 'Детская литература';
+			}
+			?>
+		</h1>
 		<?php 
 			
 			require_once ("Connections/shop.php");
@@ -74,7 +76,7 @@ if ($_GET['result'] != ''){
 						<p class="Author"><?php echo $author[$i], '<br>';?></p>
 						<div class="button">
 							<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
-							<input type="button" value="Купить" > <!--Добавление в корзину корзину-->
+							<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
 						</div>
 					</div></a><?php 
 			} 
@@ -96,6 +98,20 @@ function Basket($q){
 	$query_count = 'select count(*) from basket';
 	$select_count = mysqli_query($link, $query);
 	header("Refresh:0");
+}
+?>
+
+<!-- поиск -->
+
+<?php  
+if ($_GET['result'] != ''){
+	$query_search = $_GET['result'];
+	$query_search = trim($query_search); 
+    $query_search = mysql_real_escape_string($query_search);
+    $query_search =htmlspecialchars($query_search);?>
+	<a href="search.php?result=<?php echo $query_search;?>"></a>
+	<?php
+	$cat = $_GET['cat'];
 }
 ?>
 

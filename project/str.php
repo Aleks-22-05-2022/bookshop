@@ -1,39 +1,4 @@
 <!DOCTYPE html>
-<?php 
-$book_id = $_GET['book'];
-require_once ("Connections/shop.php");
-$link = mysqli_connect($host, $username, $password);
-$select = mysqli_select_db($link, $db);
-$query = 'select * from products';
-$select = mysqli_query($link, $query);
-while ($book = mysqli_fetch_array($select)){
-	if ($book_id == $book['id']){
-		$name = $book['name_products'];
-		$description = $book['description_products'];
-		$price = $book['price_products'];
-		$author = $book['author'];
-		$url = $book['url_photo'];
-		$categories = $book['categories_products'];
-		$weight = $book['weight'];
-		$year = $book['year_publication'];
-		$cover = $book['cover_type'];
-		$public = $book['publishing_house'];
-		$pages = $book['pages'];
-		$age = $book['age_restrictions'];
-	}
-}
-?>
-
-<?php  
-if ($_GET['result'] != ''){
-	$query_search = $_GET['result'];
-	$query_search = trim($query_search); 
-    $query_search = mysql_real_escape_string($query_search);
-    $query_search =htmlspecialchars($query_search);?>
-	<a href="search.php?result=<?php echo $query_search;?>"></a>
-	<?php
-}
-?>
 
 <html lang="ru">
 
@@ -146,7 +111,7 @@ if ($_GET['result'] != ''){
         </table>
     </div>
     <div class="m">
-        <table cellpadding="2" cellspacing="0" width="350" height="250" align="center">
+        <table cellpadding="2" cellspacing="2" width="300" height="250" align="middle">
             <th>Как получить заказ</th>
             <tr>
                 <td class="tablica">Курьером</td>
@@ -155,10 +120,6 @@ if ($_GET['result'] != ''){
             <tr>
                 <td class="tablica">Пунктом выдачи</td>
                 <td class="tablica1">106 ₽</td>
-            </tr>
-            <tr>
-                <td class="tablica">В магазинах сети</td>
-                <td class="tablica1">Бесплатно</td>
             </tr>
         </table>
     </div>
@@ -176,7 +137,6 @@ if ($_GET['result'] != ''){
             </div>
         </div>
 
-
 <div class="er"><h3 class="annot">Аннотация</h3>
     <p>
         <?php echo $description;?>
@@ -184,3 +144,38 @@ if ($_GET['result'] != ''){
     
 </body>
 </html>
+<?php 
+$book_id = $_GET['book'];
+require_once ("Connections/shop.php");
+$link = mysqli_connect($host, $username, $password);
+$select = mysqli_select_db($link, $db);
+$query = 'select * from products';
+$select = mysqli_query($link, $query);
+while ($book = mysqli_fetch_array($select)){
+	if ($book_id == $book['id']){
+		$name = $book['name_products'];
+		$description = $book['description_products'];
+		$price = $book['price_products'];
+		$author = $book['author'];
+		$url = $book['url_photo'];
+		$categories = $book['categories_products'];
+		$weight = $book['weight'];
+		$year = $book['year_publication'];
+		$cover = $book['cover_type'];
+		$public = $book['publishing_house'];
+		$pages = $book['pages'];
+		$age = $book['age_restrictions'];
+	}
+}
+?>
+
+<?php  
+if ($_GET['result'] != ''){
+	$query_search = $_GET['result'];
+	$query_search = trim($query_search); 
+    $query_search = mysql_real_escape_string($query_search);
+    $query_search =htmlspecialchars($query_search);?>
+	<a href="search.php?result=<?php echo $query_search;?>"></a>
+	<?php
+}
+?>

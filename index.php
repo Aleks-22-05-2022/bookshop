@@ -45,7 +45,7 @@ if ($_GET['result'] != ''){
 			$link = mysqli_connect($host, $username, $password);
 			$select = mysqli_select_db($link, $db);
 			$query = 'select * from products';
-			$select_ = mysqli_query($link, $query);
+			$select = mysqli_query($link, $query);
 			$photo = array();
 			$id = array();
 			$name = array();
@@ -58,7 +58,7 @@ if ($_GET['result'] != ''){
 			$price_b = array();
 		    $col = 0;
 		 	$col_b = 0;
-			while ($book = mysqli_fetch_array($select_)){
+			while ($book = mysqli_fetch_array($select)){
 				if ($book['year_publication'] == 2022){
 					$col += 1;
 					$photo[$col] = $book['url_photo']; 
@@ -75,45 +75,63 @@ if ($_GET['result'] != ''){
 					$author_b[$col_b] = $book['author']; 
 					$price_b[$col_b] = $book['price_products']; 
 				}
-			}
-		?>
-		<div class='block'>
-			<?php 
-			for($i = 1; $i < $col + 1; $i++){?>
-				<a href="project/str.php?book=<?php echo $id[$i];?>">
-				<div class='tovar'>
-					<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
-					<p class=NameBook><?php echo $name[$i], "<br>";?></p>
-					<p class="Author"><?php echo $author[$i], '<br>';?></p>
-					<div class="button">
-						<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
-						<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
+			}?>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="project/slider.js"></script>
+			<div id="main">
+				<div class="slider">
+					<div class="slide-list">
+						<div class="slide-wrap">
+						<?php 
+						for($i = 1; $i < $col + 1; $i++){?>
+							<div class="slide-item">
+							<a href="project/str.php?book=<?php echo $id[$i];?>">
+								<div class='tovar'>
+									<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
+									<p class=NameBook><?php echo $name[$i], "<br>";?></p>
+									<p class="Author"><?php echo $author[$i], '<br>';?></p>
+									<div class="button">
+										<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
+										<input type="button" value="Купить" > <!--Добавление в корзину корзину-->
+									</div>
+								</div>
+							</a></div><?php 
+						} 
+						?></div>
+						<div class="clear"></div>
 					</div>
-				</div>
-				</a>
-			<?php 
-			} 
-			?>
+				<div class="navy prev-slide"></div>
+				<div class="navy next-slide"></div>
+			</div>
 		</div>
 		
+		<script src="project/slider1.js"></script>
 		<h1 class="new">Бесселеры</h1>	
-		<div class='block'>
-			<?php 
-			for($i = 1; $i < $col_b + 1; $i++){?>
-				<a href="str.php?book=<?php echo $id[$i];?>">
-				<div class='tovar'>
-					<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
-					<p class=NameBook><?php echo $name_b[$i], "<br>";?></p>
-					<p class="Author"><?php echo $author_b[$i], '<br>';?></p>
-					<div class="button">
-						<p class="Price"><?php echo $price_b[$i], " Рублей <br>";?> </p>
-						<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
+			<div id="main1">
+				<div class="slider">
+					<div class="slide-list">
+						<div class="slide-wrap">
+						<?php 
+						for($i = 1; $i < $col_b + 1; $i++){?>
+							<div class="slide-item">
+							<a href="project/str.php?book=<?php echo $id_b[$i];?>">
+								<div class='tovar'>
+									<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
+									<p class=NameBook><?php echo $name_b[$i], "<br>";?></p>
+									<p class="Author"><?php echo $author_b[$i], '<br>';?></p>
+									<div class="button">
+										<p class="Price"><?php echo $price_b[$i], " Рублей <br>";?> </p>
+										<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
+									</div>
+								</div>
+							</a></div><?php 
+						} 
+						?></div>
+						<div class="clear"></div>
 					</div>
-				</div>
-				</a>
-			<?php 
-			} 
-			?>
+				<div class="navy prev-slide"></div>
+				<div class="navy next-slide"></div>
+			</div>
 		</div>
 		<footer>
 		</footer>

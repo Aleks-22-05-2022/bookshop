@@ -301,7 +301,7 @@ p.c {
 }
 
 .tablica {
-    width: 40%;
+    width: 80%;
     color: #595757;
 }
 
@@ -359,21 +359,32 @@ p.c {
 }
 
 .m {
+	border-radius: 20px ;
+	background-color: #f0f5f2; /* Цвет фона */
+    color: #000000; /* Цвет текста */
+    padding: 10px ; /* Поля вокруг текста */
+    border: solid #ADC2B5;
     float: right;
 }
 
 .tablica1 {
     font-weight: bold;
 }
-
+.annot1{
+    border-radius: 20px ;
+	background-color: #f0f5f2; /* Цвет фона */
+    color: #000000; /* Цвет текста */
+    padding: 10px ; /* Поля вокруг текста */
+    border: solid #ADC2B5;
+}
 .annot {
+	
     font-size: large;
     text-align: left;
     display: block;
     overflow: hidden;
     position: relative;
     max-height: 65.52px;
-	color:#829D93;
 }
 .z{
     float: left;

@@ -1,16 +1,4 @@
-<!-- поиск -->
 
-<?php  
-if ($_GET['result'] != ''){
-	$query_search = $_GET['result'];
-	$query_search = trim($query_search); 
-    $query_search = mysql_real_escape_string($query_search);
-    $query_search =htmlspecialchars($query_search);?>
-	<a href="search.php?result=<?php echo $query_search;?>"></a>
-	<?php
-	
-}
-?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -22,7 +10,7 @@ if ($_GET['result'] != ''){
         <header>
             <a href="../index.php"><img src="photo/logoza_ru.png" class="logo"></a>
 			<form action="search.php?result=<?php echo $query_search;?>">
-				<input type="text" placeholder="Поиск..." class="search"> <!--Нужно написать поиск по странице-->
+				<input type="text" placeholder="Поиск..." class="search" id="result" name="result"> <!--Нужно написать поиск по странице-->
 				<input type="submit" value="&#128269;" class="searchSub">
 			</form>
             <img src="photo/cabinet.png" class="login"> 
@@ -83,3 +71,16 @@ if ($_GET['result'] != ''){
 	
 	  </body>
 				</html>
+<!-- поиск -->
+
+<?php  
+if ($_GET['result'] != ''){
+	$query_search = $_GET['result'];
+	$query_search = trim($query_search); 
+    $query_search = mysql_real_escape_string($query_search);
+    $query_search =htmlspecialchars($query_search);?>
+	<a href="search.php?result=<?php echo $query_search;?>"></a>
+	<?php
+	
+}
+?>

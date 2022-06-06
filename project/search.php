@@ -1,17 +1,3 @@
-<!-- поиск -->
-
-<?php  
-if ($_GET['result'] != ''){
-	$query_search = $_GET['result'];
-	$query_search = trim($query_search); 
-    $query_search = mysql_real_escape_string($query_search);
-    $query_search =htmlspecialchars($query_search);?>
-	<a href="project/search.php?result=<?php echo $query_search;?>"></a>
-	<?php
-	
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -22,7 +8,7 @@ if ($_GET['result'] != ''){
     <body>
         <header>
             <a href="../index.php"><img src="photo/logoza_ru.png" class="logo"></a>
-			<form action="project/search.php?result=<?php echo $query_search;?>">
+			<form action="search.php?result=<?php echo $query_search;?>">
 				<input type="text" placeholder="Поиск..." class="search" id="result" name="result">
             	<input type="submit" value="&#128269;" class="searchSub" >
 			</form>
@@ -87,7 +73,7 @@ if ($_GET['result'] != ''){
 						<p class="Author"><?php echo $author[$i], '<br>';?></p>
 						<div class="button">
 							<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
-							<input type="button" value="Купить" onclick="<?php Basket($id[$i]); ?>"> <!--Добавление в корзину корзину-->
+							<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
 						</div>
 					</div></a><?php 
 			} ?>
@@ -106,6 +92,19 @@ function Basket($q){
 	$query_count = 'select count(*) from basket';
 	$select_count = mysqli_query($link, $query);
 	header("Refresh:0");
+}
+?>
+
+<!-- поиск -->
+
+<?php  
+if ($_GET['result'] != ''){
+	$query_search = $_GET['result'];
+	$query_search = trim($query_search); 
+    $query_search = mysql_real_escape_string($query_search);
+    $query_search =htmlspecialchars($query_search);?>
+	<a href="search.php?result=<?php echo $query_search;?>"></a>
+	<?php	
 }
 ?>
 
