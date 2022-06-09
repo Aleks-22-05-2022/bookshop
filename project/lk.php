@@ -39,15 +39,16 @@ if ($_GET['result'] != ''){
         <meta charset="utf-8">
         <title>Читай</title>
         <link rel="stylesheet" href="lk1.css">
+		
     </head>
     <body>
         <header>
-            <a href="#"><img src="file:///D|/polytech/2сем/ПД/photo/logoza_ru.png" class="logo"></a>
+            <a href="#"><img src="photo/logoza_ru.png" class="logo"></a>
             <input type="text" placeholder="Поиск..." class="search"> <!--Нужно написать поиск по странице-->
             <input type="submit" value="&#128269;" class="searchSub">
-            <img src="https://xn--80aaaacc4bth9atiu.xn--p1ai/static/img/cabinet.png" class="login"> 
+            <img src="photo/cabinet.png" class="login"> 
             <div class="imgblock">
-                <a href=""><img src="https://avatars.mds.yandex.net/i?id=3647d58c8eb96d86f46741f5292d21ba-5663007-images-thumbs&n=13" alt="Snow"></a>
+                <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
                 <span><?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
             </div>
         </header>
@@ -85,6 +86,26 @@ if ($_GET['result'] != ''){
 	</ul>                          
         
     </main>
+	<footer>
+		 	<div class="waves">
+        		<div class="wave" id="wave1"></div>
+    		</div>
+			<ul class="social">
+				<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-linkedin"><ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+			</ul>
+			<ul class="foo">
+				<li><a href="index.php">Главная</a></li>
+				<li><a href="o_kompanii.php">О компании</a></li>
+				<li><a href="partners.php">Партнеры</a></li>
+				<li><a href="dostavka.php">Доставка и оплата</a></li>
+			</ul>
+			<p>©2022 Читай. | Отвлекись от реальности</p>
+		</footer>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 					
     </body>
 </html>

@@ -44,6 +44,26 @@
 		<p class="text_part">Если вам сложно сделать книжный выбор или просто хочется убедиться в том, что книга, которая так манит к себе с полки, та самая, - мы поможем буквально. 
 		Наши продавцы разделяют вашу любовь к чтению и всегда рады помочь, чтобы вы вышли из нашего книжного с той самой книгой и хорошим настроением.</p>
 		</div>
+		<footer>
+		 	<div class="waves">
+        		<div class="wave" id="wave1"></div>
+    		</div>
+			<ul class="social">
+				<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-linkedin"><ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+			</ul>
+			<ul class="foo">
+				<li><a href="index.php">Главная</a></li>
+				<li><a href="o_kompanii.php">О компании</a></li>
+				<li><a href="partners.php">Партнеры</a></li>
+				<li><a href="dostavka.php">Доставка и оплата</a></li>
+			</ul>
+			<p>©2022 Читай. | Отвлекись от реальности</p>
+		</footer>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	  </body>
 				</html>
 

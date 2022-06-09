@@ -410,6 +410,66 @@ p.c {
 	border-radius: 10px;
 }
 
-.main{
-	align-content: center;
+.er p{
+	max-width: 1700px;
+	
 }
+
+
+.main{
+	
+	position: absolute;
+	align-content: center;
+	left: 50%;
+    margin-left: -700px;
+	width: 1300px;
+}
+
+footer{
+    position: relative;/*относительное позиционирование*/
+    width: 100%;/*на всю ширину*/
+    padding: 20px 50px;/*поля для контента*/
+    background: #ADC2B5;/*цвет футера*/
+    display: flex;
+    justify-content: center;/*в центре по горизонтали*/
+    align-items: center;/*в центре по вертикали*/
+    flex-direction: column;
+    margin-top: 100px;/*отступ сверху*/
+}
+.social,
+.foo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;/*разрешен перенос на новую строку*/
+}
+.social li,
+.foo li{
+    list-style: none;/*удалить черные маркеры*/
+}
+.social li a {
+    font-size: 2em;/*размер иконок*/
+    color: black;/*цвет иконок*/
+    margin: 0 10px;
+    display: inline-block;/*отображать как строчно-блочный элемент*/
+    transition: 0.5s;/*плавный переход*/
+}
+.foo li a {
+    font-size: 1.2em;/*размер ссылок меню*/
+    color: black;/*цвет ссылок меню*/
+    margin: 0 15px;
+    text-decoration: none;/*ссылка без подчеркивания*/
+    display: inline-block;
+}
+.foo li a:hover {
+    opacity: 1;
+}
+footer p {
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
