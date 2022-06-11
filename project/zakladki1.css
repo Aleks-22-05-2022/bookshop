@@ -1,0 +1,431 @@
+body{
+	/*background: #f0f5f2;*/
+}
+h3{
+	color:#829D93;
+}
+.logo{
+    width: 310px;
+    height: auto;
+    margin: 30px;
+    margin-right: 50px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	background: #ADC2B5;
+	
+}
+
+.search{
+    height: 40px;
+    width: 460px;
+    color: #ADC2B5;
+    font-size: large;
+    padding-left: 5px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.searchSub {
+    height: 45px;
+    width: 45px;
+    margin-right: 50px;
+}
+
+.login{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    margin-left: 10px;
+}
+
+.log{
+    font-size: large;
+    margin-right: 30px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imgblock{
+    position: relative;
+    text-align: center;
+}
+
+.imgblock img{
+    height: 45px;
+    width: 45px;
+}
+.imgblock span{
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+}
+
+
+.menu{
+    text-align: center;
+	background: #ADC2B5;
+	height: 50px;
+}
+
+.menu a{
+    text-decoration: none; 
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+}
+
+.new{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 250%;
+	color: #829D93;
+}
+
+.Pictures{
+	height: 210px;
+	width: 135px;
+	margin-top: 10px;
+}
+
+.NameBook{
+	margin: 5px;
+	xmax-width: 30ch;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.Author{
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	font-weight: 200;
+	color: #999999;
+}
+
+.Price{
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	font-weight: 900;
+}
+
+.tovar{
+	width: 280px;
+	text-align: center;
+	outline: 2px solid #ADC2B5;
+	background: #F0F5F2;
+	margin: 40px;
+	margin-top: 20px;
+	border-radius: 15px;
+	position: relative;	 
+	min-height: 430px;
+    transition: 1s;	
+	text-decoration: none;
+}
+
+.tovar:hover {
+  	transform: scale(1.1);
+}
+
+.block{
+	display: grid;
+    grid-gap: 50px;
+	grid-row-gap: 0px;
+    grid-template-columns: 280px 280px 280px 280px;
+	justify-content: center;	
+	align-items:baseline;
+	justyfy-items: stretch;
+}
+
+.tovar a{
+	text-decoration: none;
+}
+.tovar input{
+	background: #ADC2B5;
+	height: 40px;
+	width: 130px; /*Если меняем длину, нужно будет изменить (.button - left)*/
+	border-radius: 15px;
+	border-color: #ADC2B5;
+	margin-bottom: 10px;
+	font-weight: 600;
+	font-size: 110%;
+	font-color: #829D93;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.button{
+	position: absolute;
+	left: 75px;
+	bottom: 5px;
+}
+
+.partners{
+	margin: 170px;
+	margin-top: 40px;
+	margin-right:200px;
+	position: relative;
+	justify-content: center;
+}
+.text_part{
+	text-align: justify;
+	line-height: 1.5;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 19px;
+}
+#main {
+	width: 100%;
+	padding: 1% 3%;
+	
+}
+#main h1 { 
+	text-align: center;
+	font: 2em Helvetica; 
+	margin: 20px 0 10px 0;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #444444; 
+}
+/* Задаем сброс обтекания */
+.clear {
+	margin-top: -1px;
+	height: 1px;
+	clear:both;
+	zoom: 1;
+}		
+/* Slider */
+.slider {
+	/* Ширина контейнера */
+	width: 1200px;
+	/* Внешние тступы сверху и снизу */
+	margin: 10px auto;
+	/* Внутренние отступы для ссылок navy */
+	padding: 0 30px;
+	/* Позиционирование */
+	position: relative;
+	/* Скроем то что выходит за границы */
+	overflow: hidden;
+	right: 100px;
+}
+/* Двойной клик по ссылкам вперед/назад вызывает выделение всех элементов слайдера,
+поэтому предотвращаем это */
+.slider::-moz-selection { background: transparent; color: #fff; text-shadow: none; }
+.slider::selection { background: transparent; color: #fff; text-shadow: none; }
+
+.slide-list {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.slide-wrap {
+	position: relative;
+	left: 0px;
+	top: 0;
+	/* максимально возможная ширина обертки слайдера */
+	width: 10000000px;
+}
+.slide-item {
+	/* Ширина слайда */
+	width: 280px;
+	/* Внутренние отступы */
+	padding: 10px;
+	/* Обтекание */
+	float: left;
+}
+.slide-title {
+	/* Шрифт */
+	font: bold 16px monospace;
+	/* Указываем, что элемен блочный */
+	display: block;
+	text-align: center;
+}
+
+/* навигация вперед/назад */
+.navy {
+	/* абсолютное позиционирование */
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	height: 100%;
+	/* ширина ссылок */
+	width: 30px;
+	cursor: pointer;
+}
+.prev-slide {
+	left: 0;
+	background: url(bg/left-arrow.png) 11px 40% no-repeat;
+}
+.next-slide {
+	right: 0;
+	background: #FFFFFF url(bg/right-arrow.png) 9px 40% no-repeat;
+}
+
+.menu1{
+	float: right;
+    width: 210px;
+    top: 40px;
+    left: 10px;
+    padding: 12px;
+}
+.ramka{
+	width: 210px;	height: 55px; /* Размеры */
+    background: #f0f5f2; /* Цвет фона */
+    border: 1px solid #829D93; /* Белая рамка */
+	outline:1px solid #829D93;
+	border-radius: 2px;
+}
+.obc{
+	display: flex;
+	align-content: center;
+}
+.menu1 a{
+	line-height: 3;
+    text-decoration: none; 
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+}
+
+.block-border {
+	float: left;
+	width: 100%;
+    background: #fff;
+    position:fixed;
+    margin-bottom: 20px;
+}
+.card-block .group-title {
+    background-color: rgba(57,66,76,0.03);
+    border-bottom: 1px solid #f0f5f2;
+    padding: 10px 24px;
+    font-size: 100%;
+    line-height: 26px;
+    border-radius: 16px 16px 0 0;
+}
+a.right, span.right {
+    float: right !important;
+}
+.card-block.with-pad, .card-block .with-pad {
+    padding: 22px 24px;
+}
+.card-block.with-pad, .card-block .with-pad {
+    padding: 22px 24px;
+}
+.with-pad {
+    position: fixed;
+}
+.right {
+    float: right;
+}
+a {
+    cursor: pointer;
+}
+a {
+    color: #3e99ed;
+    text-decoration: none;
+}
+
+.group-row-title {
+    display: block;
+    margin-bottom: 12px;
+    line-height: 20px;
+}
+
+div .group-row-title:last-child {
+    margin-bottom: 0px;
+}
+.group-row-title {
+    display: block;
+    margin-bottom: 12px;
+    line-height: 20px;
+}
+
+.card-block.with-pad, .card-block .with-pad {
+    padding: 22px 24px;
+}
+.with-pad {
+    position: relative;
+}
+
+.find-block, .card-block {
+    margin-bottom: 24px;
+    border-radius: 16px;
+    border: 1px solid #21588b;
+}
+.block-border {
+    background: #f0f5f2;
+    position: relative;
+    margin-bottom: 20px;
+}
+.wrapper {
+  text-align: center;
+}
+figure {
+  display: inline-block;
+  text-align: center;
+}
+figure img {
+  height: 200px;
+}
+
+
+.tovar{
+	width: 280px;
+	text-align: center;
+	outline: 2px solid #ADC2B5;
+	background: #F0F5F2;
+	margin: 40px;
+	margin-left: 1px;
+	margin-right: 0px;
+	margin-top: 20px;
+	border-radius: 15px;
+	position: relative;	 
+	min-height: 430px;
+    transition: 1s;	
+	text-decoration: none;
+}
+.Pictures{
+	height: 210px;
+	width: 135px;
+	margin-top: 10px;
+}
+
+.NameBook{
+	margin: 5px;
+	xmax-width: 30ch;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.Author{
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	font-weight: 200;
+	color: #999999;
+}
+
+.Price{
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	font-weight: 900;
+}
+.button{
+	position: absolute;
+	left: 75px;
+	bottom: 5px;
+}
+
+
+.block{
+	display: grid;
+    grid-gap: 50px;
+	grid-row-gap: 0px;
+    grid-template-columns: 280px 280px 280px 280px;
+	justify-content: center;	
+	align-items:baseline;
+	justyfy-items: stretch;
+}
