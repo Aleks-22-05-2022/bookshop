@@ -267,7 +267,7 @@ header{
 }
 
 .menu1{
-	display: inline-block;
+	float: right;
     width: 210px;
     top: 40px;
     left: 10px;
@@ -280,9 +280,11 @@ header{
 	outline:1px solid #829D93;
 	border-radius: 2px;
 }
-
+.obc{
+	display: flex;
+	align-content: center;
+}
 .menu1 a{
-	
 	line-height: 3;
     text-decoration: none; 
     color: black;
@@ -292,14 +294,8 @@ header{
 	font-size: 20px;
 }
 
-.find-block, .card-block {
-    margin-bottom: 24px;
-    border-radius: 16px;
-    border: 1px solid #f0f5f2;
-}
 .block-border {
-	float: right;
-	display: inline-block;
+	float: left;
 	width: 84.4%;
     background: #fff;
     position:fixed;
@@ -309,8 +305,7 @@ header{
     background-color: rgba(57,66,76,0.03);
     border-bottom: 1px solid #f0f5f2;
     padding: 10px 24px;
-    display: block;
-    font-size: 20px;
+    font-size: 100%;
     line-height: 26px;
     border-radius: 16px 16px 0 0;
 }
@@ -324,7 +319,7 @@ a.right, span.right {
     padding: 22px 24px;
 }
 .with-pad {
-    position: relative;
+    position: fixed;
 }
 .right {
     float: right;

@@ -36,54 +36,54 @@ if ($_GET['result'] != ''){
 ?>
 <html lang="ru">
     <head>
-        <meta charset="utf-8">
-        <title>Р§РёС‚Р°Р№</title>
+        <meta charset="windows-1251">
+        <title>Читай</title>
         <link rel="stylesheet" href="lk1.css">
     </head>
     <body>
         <header>
-            <a href="#"><img src="file:///D|/polytech/2СЃРµРј/РџР”/photo/logoza_ru.png" class="logo"></a>
-            <input type="text" placeholder="РџРѕРёСЃРє..." class="search"> <!--РќСѓР¶РЅРѕ РЅР°РїРёСЃР°С‚СЊ РїРѕРёСЃРє РїРѕ СЃС‚СЂР°РЅРёС†Рµ-->
+            <a href="#"><img src="file:///D|/polytech/2сем/ПД/photo/logoza_ru.png" class="logo"></a>
+            <input type="text" placeholder="Поиск..." class="search"> <!--Нужно написать поиск по странице-->
             <input type="submit" value="&#128269;" class="searchSub">
             <img src="https://xn--80aaaacc4bth9atiu.xn--p1ai/static/img/cabinet.png" class="login"> 
             <div class="imgblock">
                 <a href=""><img src="https://avatars.mds.yandex.net/i?id=3647d58c8eb96d86f46741f5292d21ba-5663007-images-thumbs&n=13" alt="Snow"></a>
-                <span><?php echo $num; ?></span> <!-- РќСѓР¶РЅРѕ РїРѕС‚РѕРј СЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂРѕРІ РІ РєРѕСЂР·РёРЅРµ -->
+                <span><?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
             </div>
         </header>
         <nav class="menu">
-            <a href="categories.php?cat=Classic">РљР»Р°СЃСЃРёРєР°</a>
-            <a href="categories.php?cat=Psihologes">РџСЃРёС…РѕР»РѕРіРёСЏ</a>
-            <a href="categories.php?cat=Novel">Р РѕРјР°РЅС‹</a>
-            <a href="categories.php?cat=Fantasy">Р¤СЌРЅС‚РµР·Рё</a>
-            <a href="categories.php?cat=Children">Р”РµС‚СЃРєР°СЏ Р»РёС‚РµСЂР°С‚СѓСЂР°</a>
+            <a href="categories.php?cat=Classic">Классика</a>
+            <a href="categories.php?cat=Psihologes">Психология</a>
+            <a href="categories.php?cat=Novel">Романы</a>
+            <a href="categories.php?cat=Fantasy">Фэнтези</a>
+            <a href="categories.php?cat=Children">Детская литература</a>
         </nav>
 		
-		  <nav class="menu1">
-             <div class="ramka"><a href="">РњРѕРё Р·Р°РєР°Р·С‹</a></div>
-             <div class="ramka"><a href="">РџРѕРЅСЂР°РІРёРІС€РµРµСЃСЏ</a></div>
-             <div class="ramka"><a href="">Р—Р°РєР»Р°РґРєРё</a></div>
-             <div class="ramka"><a href="">Р РµС†РµРЅР·РёРё</a></div>
-        </nav>
-        
-		<div class="block-border card-block">
-                <div class="group-title">
-                    <a class="right"><span style="margin-right:0;" class="i-group-edit"></span></a>                    <h2>Р›РёС‡РЅС‹Рµ РґР°РЅРЅС‹Рµ</h2>
-                </div>
-                <div class="with-pad">                     
-                <div class="profile-info-column">
-                <span class="group-row-title"><b>РРјСЏ</b>: РРІР°РЅ</span> <span class="group-row-title"><b>Р¤Р°РјРёР»РёСЏ</b>: РРІР°РЅРѕРІ</span>
-					<span class="group-row-title"><b>РўРµР»РµС„РѕРЅ:</b> +79999999999</span>
-					 <span class="group-row-title"><b>Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ:</b> 01&nbsp;СЏРЅРІР°СЂСЏ&nbsp;2022&nbsp;Рі.</span>
-                     <span class="group-row-title"><b>Р”Р°С‚Р° СЂРµРіРёСЃС‚СЂР°С†РёРё:</b> 01&nbsp;СЏРЅРІР°СЂСЏ&nbsp;2022&nbsp;Рі.</span>
-                    <span class="group-row-title"><b>РЎС‚Р°С‚СѓСЃ:</b> РќРѕРІРёС‡РѕРє</span>
-                     <span class="group-row-title"><b>Р РµР№С‚РёРЅРі:</b> СЃРєРѕСЂРѕ РїРѕСЏРІРёС‚СЃСЏ</span>
-                     <span class="group-row-title"><b>РРЅРґРµРєСЃ Р°РєС‚РёРІРЅРѕСЃС‚Рё:</b> СЃРєРѕСЂРѕ РїРѕСЏРІРёС‚СЃСЏ</span>
-                </div>
-            </div>
-		</div>
-	</ul>                          
-        
+		  <div class="obc">
+    <nav class="menu1">
+        <div class="ramka"><a href="">Мои заказы</a></div>
+        <div class="ramka"><a href="">Понравившееся</a></div>
+        <div class="ramka"><a href="">Закладки</a></div>
+        <div class="ramka"><a href="">Выйти</a></div>
+   </nav>
+   
+   <div class="block-border card-block">
+           <div class="group-title">
+               <a class="right"><span style="margin-right:0;" class="i-group-edit"></span></a>                    <h2>Личные данные</h2>
+           </div>
+           <div class="with-pad">                     
+           <div class="profile-info-column">
+           <span class="group-row-title"><b>Имя</b>: Иван</span> <span class="group-row-title"><b>Фамилия</b>: Иванов</span>
+               <span class="group-row-title"><b>Телефон:</b> +79999999999</span>
+                <span class="group-row-title"><b>Дата рождения:</b> 01&nbsp;января&nbsp;2022&nbsp;г.</span>
+                <span class="group-row-title"><b>Дата регистрации:</b> 01&nbsp;января&nbsp;2022&nbsp;г.</span>
+               <span class="group-row-title"><b>Статус:</b> Новичок</span>
+                <span class="group-row-title"><b>Рейтинг:</b> скоро появится</span>
+                <span class="group-row-title"><b>Индекс активности:</b> скоро появится</span>
+           </div>
+       </div>
+   </div>
+</div>
     </main>
 					
     </body>
