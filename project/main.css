@@ -1,0 +1,134 @@
+body{
+	/*background: #f0f5f2;*/
+}
+h3{
+	color:#829D93;
+}
+.logo{
+    width: 310px;
+    height: auto;
+    margin: 30px;
+    margin-right: 50px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	background: #ADC2B5;
+	
+}
+
+.search{
+    height: 40px;
+    width: 460px;
+    color: #ADC2B5;
+    font-size: large;
+    padding-left: 5px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.searchSub {
+    height: 45px;
+    width: 45px;
+    margin-right: 50px;
+}
+
+.login{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    margin-left: 10px;
+}
+
+.log{
+    font-size: large;
+    margin-right: 30px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imgblock{
+    position: relative;
+    text-align: center;
+}
+
+.imgblock img{
+    height: 45px;
+    width: 45px;
+}
+.imgblock span{
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+}
+
+
+.menu{
+    text-align: center;
+	background: #ADC2B5;
+	height: 50px;
+}
+
+.menu a{
+    text-decoration: none; 
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+}
+
+.auth {
+	height: 330px;
+	width: 160px;
+	margin-left: 45%;
+	text-align: center;
+	align-content: center;
+}
+
+.poles {
+	text-align: left;
+}
+
+.pass:nth-last-child(2) {
+	margin-bottom: 30px;
+}
+
+.send {
+	width: 165px;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	background-color: #ADC2B5;
+	border-width: 1px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+
+}
+
+p {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+}
+
+.reg_text {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 19px;
+}
+
+.error{
+	color: red;
+	text-align: center;
+}
+
+
+
