@@ -54,8 +54,8 @@ if ($_GET['result'] != ''){
 		  <div class="obc">
     <nav class="menu1">
 		<div class="ramka"><a href="#">Мой профиль</a></div>
-        <div class="ramka"><a href="#">Мои заказы</a></div>
-        <div class="ramka"><a href="#">Понравившееся</a></div>
+        <div class="ramka"><a href="zakaz.php">Мои заказы</a></div>
+        <div class="ramka"><a href="liked.php">Понравившееся</a></div>
         <div class="ramka"><a href="zakladki.php">Закладки</a></div>
         <div class="ramka"><a href="del.php">Выйти</a></div>
    </nav>

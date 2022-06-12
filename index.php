@@ -132,7 +132,7 @@ if ($_GET['result'] != ''){
 									<div class="button">
 										<p class="Price"><?php echo $price_b[$i], " Рублей <br>";?> </p>
 										<form method="post"> 
-											
+											<input type="button" value="Купить" name="basket">
 										</form>
 										<!--Добавление в корзину корзину-->
 									</div>
@@ -183,7 +183,7 @@ if(array_key_exists('basket', $_POST)){
 	$query = "insert into basket (`products_id`, `product_count`,`mark`) values ('$book_id', 1, 'n');";
 	$select = mysqli_query($link, $query);
 	echo "<script>alert('Книга добавлена в корзину');</script>";
-}a
+}
 ?>
 
 

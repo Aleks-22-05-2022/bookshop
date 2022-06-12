@@ -70,64 +70,48 @@ function del(){
 ?>
 <html lang="ru">
     <head>
-        <meta charset="windows-1251">
-        <title>Читай</title>
+        <meta charset="utf-8">
+        <title>Р§РёС‚Р°Р№</title>
         <link rel="stylesheet" href="liked1.css">
     </head>
     <body>
         <header>
             <a href="../index.php"><img src="photo/logoza_ru.png" class="logo"></a>
             <form action="search.php?result=<?php echo $query_search;?>">
-				<input type="text" placeholder="Поиск..." class="search" id="result" name="result">
+				<input type="text" placeholder="РџРѕРёСЃРє..." class="search" id="result" name="result">
             	<input type="submit" value="&#128269;" class="searchSub" >
 			</form>
             <img src="photo/cabinet.png" class="login">
             <div class="imgblock">
                 <a href="korzina.php"><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
-                <span><?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
+                <span><?php echo $num; ?></span> <!-- РќСѓР¶РЅРѕ РїРѕС‚РѕРј СЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂРѕРІ РІ РєРѕСЂР·РёРЅРµ -->
             </div>
         </header>
         <nav class="menu">
-            <a href="categories.php?cat=Classic">Классика</a>
-            <a href="categories.php?cat=Psihologes">Психология</a>
-            <a href="categories.php?cat=Novel">Романы</a>
-            <a href="categories.php?cat=Fantasy">Фэнтези</a>
-            <a href="categories.php?cat=Children">Детская литература</a>
+            <a href="categories.php?cat=Classic">РљР»Р°СЃСЃРёРєР°</a>
+            <a href="categories.php?cat=Psihologes">РџСЃРёС…РѕР»РѕРіРёСЏ</a>
+            <a href="categories.php?cat=Novel">Р РѕРјР°РЅС‹</a>
+            <a href="categories.php?cat=Fantasy">Р¤СЌРЅС‚РµР·Рё</a>
+            <a href="categories.php?cat=Children">Р”РµС‚СЃРєР°СЏ Р»РёС‚РµСЂР°С‚СѓСЂР°</a>
         </nav>
 		
 		  <div class="obc">
     <nav class="menu1">
-		<div class="ramka"><a href="lk.php">Мой профиль</a></div>
-        <div class="ramka"><a href="#">Мои заказы</a></div>
-        <div class="ramka"><a href="#">Понравившееся</a></div>
-        <div class="ramka"><a href="#">Закладки</a></div>
-        <div class="ramka"><a href="del.php">Выйти</a></div>
+		<div class="ramka"><a href="lk.php">РњРѕР№ РїСЂРѕС„РёР»СЊ</a></div>
+        <div class="ramka"><a href="zakaz.php">РњРѕРё Р·Р°РєР°Р·С‹</a></div>
+        <div class="ramka"><a href="#">РџРѕРЅСЂР°РІРёРІС€РµРµСЃСЏ</a></div>
+        <div class="ramka"><a href="zakladki.php">Р—Р°РєР»Р°РґРєРё</a></div>
+        <div class="ramka"><a href="del.php">Р’С‹Р№С‚Рё</a></div>
    </nav>
    
    <div class="block-border card-block">
            <div class="group-title">
-               <a class="right"><span style="margin-right:0;" class="i-group-edit"></span></a><h2>Понравившиеся</h2>
+               <a class="right"><span style="margin-right:0;" class="i-group-edit"></span></a><h2>РџРѕРЅСЂР°РІРёРІС€РёРµСЃСЏ</h2>
            	</div>
            	<div class="with-pad">             
 				<div class="wrapper">
 				<figure>
-    			<div class="block">
-						<?php 
-						for($i = 1; $i < $col + 1; $i++){?>
-							<a href="str.php?book=<?php echo $id[$i];?>">
-								<div class='tovar'>
-									<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
-									<p class=NameBook><?php echo $name[$i], "<br>";?></p>
-									<p class="Author"><?php echo $author[$i], '<br>';?></p>
-									<div class="button">
-										<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
-										<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
-									</div>
-								</div>
-							</a><?php 
-						} 
-					?>
-				</div>
+						<h3>Р’ СЂР°Р·СЂР°Р±РѕС‚РєРµ</h3>
 				</figure>
 			</div>
        	</div>
@@ -146,12 +130,12 @@ function del(){
 				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
 			</ul>
 			<ul class="foo">
-				<li><a href="index.php">Главная</a></li>
-				<li><a href="o_kompanii.php">О компании</a></li>
-				<li><a href="partners.php">Партнеры</a></li>
-				<li><a href="dostavka.php">Доставка и оплата</a></li>
+				<li><a href="index.php">Р“Р»Р°РІРЅР°СЏ</a></li>
+				<li><a href="o_kompanii.php">Рћ РєРѕРјРїР°РЅРёРё</a></li>
+				<li><a href="partners.php">РџР°СЂС‚РЅРµСЂС‹</a></li>
+				<li><a href="dostavka.php">Р”РѕСЃС‚Р°РІРєР° Рё РѕРїР»Р°С‚Р°</a></li>
 			</ul>
-			<p>©2022 Читай. | Отвлекись от реальности</p>
+			<p>В©2022 Р§РёС‚Р°Р№. | РћС‚РІР»РµРєРёСЃСЊ РѕС‚ СЂРµР°Р»СЊРЅРѕСЃС‚Рё</p>
 		</footer>
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>				

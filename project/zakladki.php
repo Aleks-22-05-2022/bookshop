@@ -34,18 +34,12 @@ if ($_GET['result'] != ''){
 	<?php
 }
 ?>
-<?php 
-function del(){
-	$session = fopen("session.txt", "w");
-	fwrite($session, "");
-}
-?>
 
 <?php 
 	require_once ("Connections/shop.php");
 	$link = mysqli_connect($host, $username, $password);
 	$select = mysqli_select_db($link, $db);
-	$query = 'select * from basket where mark="y"';
+	$query = 'select * from basket where mark="y" and users_id='.file_get_contents("session.txt").'';
 	$select = mysqli_query($link, $query);
 	$product = array();
 	$col = 0;
@@ -98,8 +92,8 @@ function del(){
 		  <div class="obc">
     <nav class="menu1">
 		<div class="ramka"><a href="lk.php">Мой профиль</a></div>
-        <div class="ramka"><a href="#">Мои заказы</a></div>
-        <div class="ramka"><a href="#">Понравившееся</a></div>
+        <div class="ramka"><a href="zakaz.php">Мои заказы</a></div>
+        <div class="ramka"><a href="liked.php">Понравившееся</a></div>
         <div class="ramka"><a href="#">Закладки</a></div>
         <div class="ramka"><a href="del.php">Выйти</a></div>
    </nav>

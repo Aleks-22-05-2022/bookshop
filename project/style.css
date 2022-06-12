@@ -20,6 +20,11 @@ header{
 	
 }
 
+header a{
+	color: #000000;
+	text-decoration: none;
+}
+
 .search{
     height: 40px;
     width: 460px;
@@ -432,12 +437,11 @@ div .group-row-title:last-child {
 
 .korzina li{
     list-style: none;/*удалить черные маркеры*/
-	
 }
-.korzina li a {
+.korzina li {
     font-size: 1.2em;/*размер ссылок меню*/
     color: black;/*цвет ссылок меню*/
-    margin: 0 80px;
+    margin: 0 50px;
     text-decoration: none;/*ссылка без подчеркивания*/
     display: inline-block;
 }
@@ -500,3 +504,16 @@ td{
 	font-color: #829D93;
 	font-family: Comic Sans MS, Comic Sans, cursive;
 }
+.dell2{
+	background: #ADC2B5;
+	height: 40px;
+	width: 200px; /*Если меняем длину, нужно будет изменить (.button - left)*/
+	border-radius: 15px;
+	border-color: #ADC2B5;
+	margin-bottom: 10px;
+	font-weight: 600;
+	font-size: 110%;
+	font-color: #829D93;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+

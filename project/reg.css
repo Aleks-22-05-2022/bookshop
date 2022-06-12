@@ -49,6 +49,11 @@ header{
 	
 }
 
+header a{
+	color: #000000;
+	text-decoration: none;
+}
+
 .search{
     height: 40px;
     width: 460px;

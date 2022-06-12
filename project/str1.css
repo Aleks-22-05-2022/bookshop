@@ -19,6 +19,11 @@ header{
 	
 }
 
+header a{
+	color: #000000;
+	text-decoration: none;
+}
+
 .descrip{
 	display: flex;
 	align-content: center;
