@@ -1,5 +1,6 @@
 <!-- поиск -->
 
+<!DOCTYPE html>
 <?php  
 $session = fopen("project/session.txt", "r");
 if(file_get_contents("project/session.txt") != '') {
@@ -25,7 +26,6 @@ if ($_GET['result'] != ''){
 }
 ?>
 
-<!DOCTYPE html>
 <html lang="ru">
     <head>
         <meta charset="UTF-8">

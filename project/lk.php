@@ -27,12 +27,22 @@ if ($_GET['result'] != ''){
         <meta charset="utf-8">
         <title>Читай</title>
         <link rel="stylesheet" href="lk1.css">
+		<script>
+			function del(){
+				<?php 
+				$session = fopen("session.txt", "w");
+				fwrite($session, "");
+				?>
+			}
+		</script>
     </head>
     <body>
         <header>
             <a href="../index.php"><img src="photo/logoza_ru.png" class="logo"></a>
-            <input type="text" placeholder="Поиск..." class="search"> <!--Нужно написать поиск по странице-->
-            <input type="submit" value="&#128269;" class="searchSub">
+            <form action="search.php?result=<?php echo $query_search;?>">
+				<input type="text" placeholder="Поиск..." class="search" id="result" name="result">
+            	<input type="submit" value="&#128269;" class="searchSub" >
+			</form>
             <img src="photo/cabinet.png" class="login"> 
             <div class="imgblock">
                 <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
@@ -52,7 +62,7 @@ if ($_GET['result'] != ''){
         <div class="ramka"><a href="">Мои заказы</a></div>
         <div class="ramka"><a href="">Понравившееся</a></div>
         <div class="ramka"><a href="zakladki.php">Закладки</a></div>
-        <div class="ramka"><a href="">Выйти</a></div>
+        <div class="ramka"><a href="../index.php" onClick="del();">Выйти</a></div>
    </nav>
    
    <div class="block-border card-block">
@@ -74,6 +84,26 @@ if ($_GET['result'] != ''){
    </div>
 </div>
     </main>
+	<footer>
+		 	<div class="waves">
+        		<div class="wave" id="wave1"></div>
+    		</div>
+			<ul class="social">
+				<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-linkedin"><ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+			</ul>
+			<ul class="foo">
+				<li><a href="index.php">Главная</a></li>
+				<li><a href="o_kompanii.php">О компании</a></li>
+				<li><a href="partners.php">Партнеры</a></li>
+				<li><a href="dostavka.php">Доставка и оплата</a></li>
+			</ul>
+			<p>©2022 Читай. | Отвлекись от реальности</p>
+		</footer>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 					
     </body>
 </html>

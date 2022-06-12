@@ -1,8 +1,15 @@
-<?php
-	session_start();
-?>
-
 <!doctype html>
+
+<?php  
+if ($_GET['result'] != ''){
+	$query_search = $_GET['result'];
+	$query_search = trim($query_search); 
+    $query_search = mysql_real_escape_string($query_search);
+    $query_search =htmlspecialchars($query_search);?>
+	<a href="search.php?result=<?php echo $query_search;?>"></a>
+	<?php
+}
+?>
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -48,10 +55,7 @@
 		</form>
 		<p class="reg"> У вас уже есть аккаунт? <br> <a href="log_in.php">Авторизируйтесь</a>!
 		</p>
-	
-</body>
-</html>
-<?php 
+		<?php 
 		if (array_key_exists('send', $_POST)){
 			if (!empty($_REQUEST['name']) and !empty($_REQUEST['surname']) and !empty($_REQUEST['email']) and !empty($_REQUEST['post_index']) and !empty($_REQUEST['password']) and !empty($_REQUEST['adress'])){
 				require_once ("Connections/shop.php");
@@ -62,17 +66,40 @@
 				$email = $_REQUEST['email'];
 				$adress = $_REQUEST['adress'];
 				$post_index = $_REQUEST['post_index'];
-				$password = $_REQUEST['password'];
+				$password = md5($_REQUEST['password']);
 
-				mysqli_query($connect, "INSERT INTO `users` (`id`, `name`, `s_name`, `adress`, `post_index`, `email`, `password`) VALUES (NULL, '$name', '$surname', '$adress', '$post_index', '$email', '$password');");
+				mysqli_query($link, "INSERT INTO `users` (`name`, `s_name`, `adress`, `post_index`, `email`, `password`) VALUES ( '$name', '$surname', '$adress', '$post_index', '$email', '$password');");
 				?>
 				<script>
-					document.location.replace("log_in.php");
 					alert("Регистрация прошла успешно");
+					document.location.replace("log_in.php");
 				</script>
 				<?php
 			}else{
 				echo '<p class="error">Вы ввели не все данные</p>';
 			}
 		}
-		?>
+?>
+	<footer>
+		 	<div class="waves">
+        		<div class="wave" id="wave1"></div>
+    		</div>
+			<ul class="social">
+				<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-linkedin"><ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+			</ul>
+			<ul class="foo">
+				<li><a href="index.php">Главная</a></li>
+				<li><a href="o_kompanii.php">О компании</a></li>
+				<li><a href="partners.php">Партнеры</a></li>
+				<li><a href="dostavka.php">Доставка и оплата</a></li>
+			</ul>
+			<p>©2022 Читай. | Отвлекись от реальности</p>
+		</footer>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>		
+</body>
+</html>
+
