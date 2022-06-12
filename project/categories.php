@@ -33,7 +33,7 @@ if(file_get_contents("session.txt") != '') {
             <img src="photo/cabinet.png" class="login"> 
             <?php echo $log;?>
             <div class="imgblock">
-                <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
+                <a href="korzina.php"><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
                 <span>0<?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
             </div>
         </header>
@@ -85,16 +85,19 @@ if(file_get_contents("session.txt") != '') {
 			<div class='block'>
 				<?php 
 				for($i = 1; $i < $col + 1; $i++){?>
-					<a href="str.php?book=<?php echo $id[$i];?>">
+					
 					<div class='tovar'>
+						<a href="str.php?book=<?php echo $id[$i];?>">
 						<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
 						<p class=NameBook><?php echo $name[$i], "<br>";?></p>
-						<p class="Author"><?php echo $author[$i], '<br>';?></p>
+						<p class="Author"><?php echo $author[$i], '<br>';?></p></a>
 						<div class="button">
 							<p class="Price"><?php echo $price[$i], " Рублей <br>";?> </p>
-							<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
+							<form method="post"> 
+								<input type="button" value="Купить" name="basket"> 
+							</form><!--Добавление в корзину корзину-->
 						</div>
-					</div></a><?php 
+					</div><?php 
 			} 
 		?>
 		</div>
@@ -146,6 +149,15 @@ if ($_GET['result'] != ''){
 	<a href="search.php?result=<?php echo $query_search;?>"></a>
 	<?php
 	$cat = $_GET['cat'];
+}
+	
+if(array_key_exists('basket', $_POST)){
+	require_once ("Connections/shop.php");
+	$link = mysqli_connect($host, $username, $password);
+	$select = mysqli_select_db($link, $db);
+	$query = "insert into basket (`products_id`, `product_count`,`mark`) values ('$book_id', 1, 'n');";
+	$select = mysqli_query($link, $query);
+	echo "<script>alert('Книга добавлена в корзину');</script>";
 }
 ?>
 

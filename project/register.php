@@ -26,7 +26,7 @@ if ($_GET['result'] != ''){
             <img src="photo/cabinet.png" class="login"> 
             <a href="log_in.php" class="log">Войти</a>
             <div class="imgblock">
-                <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
+                <a href="korzina.php"><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
                 <span>0<?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
             </div>
         </header>

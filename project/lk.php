@@ -22,19 +22,13 @@ if ($_GET['result'] != ''){
 	<?php
 }
 ?>
+
 <html lang="ru">
     <head>
         <meta charset="utf-8">
         <title>Читай</title>
         <link rel="stylesheet" href="lk1.css">
-		<script>
-			function del(){
-				<?php 
-				$session = fopen("session.txt", "w");
-				fwrite($session, "");
-				?>
-			}
-		</script>
+		
     </head>
     <body>
         <header>
@@ -45,7 +39,7 @@ if ($_GET['result'] != ''){
 			</form>
             <img src="photo/cabinet.png" class="login"> 
             <div class="imgblock">
-                <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
+                <a href="korzina.php"><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
                 <span><?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
             </div>
         </header>
@@ -59,10 +53,11 @@ if ($_GET['result'] != ''){
 		
 		  <div class="obc">
     <nav class="menu1">
-        <div class="ramka"><a href="">Мои заказы</a></div>
-        <div class="ramka"><a href="">Понравившееся</a></div>
+		<div class="ramka"><a href="#">Мой профиль</a></div>
+        <div class="ramka"><a href="#">Мои заказы</a></div>
+        <div class="ramka"><a href="#">Понравившееся</a></div>
         <div class="ramka"><a href="zakladki.php">Закладки</a></div>
-        <div class="ramka"><a href="../index.php" onClick="del();">Выйти</a></div>
+        <div class="ramka"><a href="del.php">Выйти</a></div>
    </nav>
    
    <div class="block-border card-block">

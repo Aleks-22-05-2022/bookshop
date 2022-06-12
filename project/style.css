@@ -326,6 +326,177 @@ footer p {
     font-size: 1.1em;
 }
 
+.menu1{
+	float: right;
+    width: 210px;
+    top: 40px;
+    left: 10px;
+    padding: 12px;
+}
+.ramka{
+	width: 210px;	height: 55px; /* Размеры */
+    background: #f0f5f2; /* Цвет фона */
+    border: 1px solid #829D93; /* Белая рамка */
+	outline:1px solid #829D93;
+	border-radius: 2px;
+}
+.obc{
+	display: flex;
+	align-content: center;
+}
+.menu1 a{
+	line-height: 3;
+    text-decoration: none; 
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+}
 
+.block-border {
+	float: left;
+	width: 84.4%;
+    background: #fff;
+    position:fixed;
+    margin-bottom: 20px;
+}
+.card-block .group-title {
+    background-color: rgba(57,66,76,0.03);
+    border-bottom: 1px solid #f0f5f2;
+    padding: 10px 24px;
+    font-size: 100%;
+    line-height: 26px;
+    border-radius: 16px 16px 0 0;
+}
+a.right, span.right {
+    float: right !important;
+}
+.card-block.with-pad, .card-block .with-pad {
+    padding: 22px 24px;
+}
+.card-block.with-pad, .card-block .with-pad {
+    padding: 22px 24px;
+}
+.with-pad {
+    position: fixed;
+}
+.right {
+    float: right;
+}
+a {
+    cursor: pointer;
+}
+a {
+    color: #3e99ed;
+    text-decoration: none;
+}
 
+.profile-info-column {
+    columns: 314px 2;
+    column-gap: 24px;
+    column-rule: 0;
+}
+.group-row-title {
+    display: block;
+    margin-bottom: 12px;
+    line-height: 20px;
+}
 
+div .group-row-title:last-child {
+    margin-bottom: 0px;
+}
+.group-row-title {
+    display: block;
+    margin-bottom: 12px;
+    line-height: 20px;
+}
+
+.card-block.with-pad, .card-block .with-pad {
+    padding: 22px 24px;
+}
+.with-pad {
+    position: relative;
+}
+
+.find-block, .card-block {
+    margin-bottom: 24px;
+    border-radius: 16px;
+    border: 1px solid #21588b;
+}
+.block-border {
+    background: #f0f5f2;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.korzina li{
+    list-style: none;/*удалить черные маркеры*/
+	
+}
+.korzina li a {
+    font-size: 1.2em;/*размер ссылок меню*/
+    color: black;/*цвет ссылок меню*/
+    margin: 0 80px;
+    text-decoration: none;/*ссылка без подчеркивания*/
+    display: inline-block;
+}
+.korzina{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  flex-wrap: wrap;/*разрешен перенос на новую строку*/
+}
+td p{
+	text-align: justify;
+	line-height: 1.5;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 19px;
+}
+table{
+	cellpadding:0;
+	cellspacing:0;
+	border:0;
+	width: 80%;
+	border-collapse: collapse;
+	text-align: left;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 19px;
+}
+tr, td{
+	border:0;
+	width: 90%;
+	padding: 10px 75px;/* высота, можно поменять*/
+	transition: .3s linear;
+}
+
+td{
+	text-align: center;
+}
+
+.dell{
+	background: #ADC2B5;
+	height: 40px;
+	width: 130px; /*Если меняем длину, нужно будет изменить (.button - left)*/
+	border-radius: 15px;
+	border-color: #ADC2B5;
+	margin-bottom: 10px;
+	font-weight: 600;
+	font-size: 110%;
+	font-color: #829D93;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.dell1{
+	background: #ADC2B5;
+	height: 40px;
+	width: 200px; /*Если меняем длину, нужно будет изменить (.button - left)*/
+	border-radius: 15px;
+	border-color: #ADC2B5;
+	margin-bottom: 10px;
+	font-weight: 600;
+	font-size: 110%;
+	font-color: #829D93;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}

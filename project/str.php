@@ -65,7 +65,7 @@ if ($_GET['result'] != ''){
             <img src="photo/cabinet.png" class="login"> 
             <?php echo $log;?>
             <div class="imgblock">
-                <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
+                <a href="korzina.php"><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
                 <span>0<?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
             </div>
         </header>
@@ -170,11 +170,11 @@ if ($_GET['result'] != ''){
 					<br>
                     <div class="knopka">
 						<form method="post">
-							<button class="d">Купить</button>
+							<button class="d" name="basket">Купить</button>
 						</form>
 						<br>
                         <form method="post">
-                        <button class="izb" name="mark">Добавить в закладки</button>
+                        	<button class="izb" name="mark">Добавить в закладки</button>
 						</form>
                     </div>
                 </div>
@@ -237,6 +237,15 @@ if(array_key_exists('mark', $_POST)){
 	$query = "insert into basket (`products_id`, `mark`) values ('$book_id', 'y');";
 	$select = mysqli_query($link, $query);
 	echo "<script>alert('Книга добавлена в закладки');</script>";
+}
+
+if(array_key_exists('basket', $_POST)){
+	require_once ("Connections/shop.php");
+	$link = mysqli_connect($host, $username, $password);
+	$select = mysqli_select_db($link, $db);
+	$query = "insert into basket (`products_id`, `product_count`,`mark`) values ('$book_id', 1, 'n');";
+	$select = mysqli_query($link, $query);
+	echo "<script>alert('Книга добавлена в корзину');</script>";
 }
 ?>
 
