@@ -87,13 +87,6 @@ header{
 	font-size: 20px;
 }
 
-.new{
-    text-align: center;
-    margin-top: 70px;
-    font-size: 250%;
-	color: #829D93;
-}
-
 .Pictures{
 	height: 210px;
 	width: 135px;
@@ -103,6 +96,7 @@ header{
 .NameBook{
 	margin: 5px;
 	xmax-width: 30ch;
+	color: #426643;
 	font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
@@ -115,6 +109,7 @@ header{
 .Price{
 	font-family: Comic Sans MS, Comic Sans, cursive;
 	font-weight: 900;
+	color: #426643;
 }
 
 .tovar{
@@ -135,19 +130,16 @@ header{
   	transform: scale(1.1);
 }
 
-.block{
-	display: grid;
-    grid-gap: 50px;
-	grid-row-gap: 0px;
-    grid-template-columns: 280px 280px 280px 280px;
-	justify-content: center;	
-	align-items:baseline;
-	justyfy-items: stretch;
-}
 
-.tovar a{
+
+.block a{
 	text-decoration: none;
 }
+
+.slide-wrap a{
+	text-decoration: none;
+}
+
 .tovar input{
 	background: #ADC2B5;
 	height: 40px;
@@ -319,7 +311,7 @@ a.right, span.right {
     padding: 22px 24px;
 }
 .with-pad {
-    position: fixed;
+    /*position: fixed;*/
 }
 .right {
     float: right;
@@ -419,12 +411,11 @@ figure img {
 	bottom: 5px;
 }
 
-
 .block{
 	display: grid;
     grid-gap: 50px;
 	grid-row-gap: 0px;
-    grid-template-columns: 280px 280px 280px 280px;
+    grid-template-columns: 280px 280px 280px;
 	justify-content: center;	
 	align-items:baseline;
 	justyfy-items: stretch;

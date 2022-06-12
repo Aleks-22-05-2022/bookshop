@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+<?php  
+$session = fopen("session.txt", "r");
+if(file_get_contents("session.txt") != '') {
+	require_once ("Connections/shop.php");
+	$link = mysqli_connect($host, $username, $password);
+	$select = mysqli_select_db($link, $db);
+	$query = 'select * from users where id = '.file_get_contents("session.txt").'';
+	$select = mysqli_query($link, $query);
+	$name = mysqli_fetch_assoc($select);
+	$log = "<a href=\"lk.php\" class=\"log\">".$name['name']."</a>";
+} else {
+	$log = "<a href=\"log_in.php\" class=\"log\">Войти</a>";	
+}
+?>
 <?php 
 $book_id = $_GET['book'];
 require_once ("Connections/shop.php");
@@ -49,7 +63,7 @@ if ($_GET['result'] != ''){
             	<input type="submit" value="&#128269;" class="searchSub" >
 			</form>
             <img src="photo/cabinet.png" class="login"> 
-            <a href="" class="log">Войти</a>
+            <?php echo $log;?>
             <div class="imgblock">
                 <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
                 <span>0<?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
@@ -152,9 +166,16 @@ if ($_GET['result'] != ''){
                 <span style="color: rgb(7, 109, 7)">В наличии</span>
                 <div align="center" class="sidebar1">
                     <?php echo $price;?>
+					<br>
+					<br>
                     <div class="knopka">
-                        <p style="text-align: center"><button type="button" class="d">Купить</button></p>
-                        <p style="text-align: center"><button type="button" class="izb">Добавить в закладки</button></p>
+						<form method="post">
+							<button class="d">Купить</button>
+						</form>
+						<br>
+                        <form method="post">
+                        <button class="izb" name="mark">Добавить в закладки</button>
+						</form>
                     </div>
                 </div>
             </div>
@@ -178,11 +199,44 @@ if ($_GET['result'] != ''){
 	
 	<div class="er">
 		<h3 class="annot">Аннотация</h3>
-		<p>
+		<p class="annot1">
 			<?php echo $description;?>
 		</p>
 	</div>
+	
     </div>
+	<footer>
+		 	<div class="waves">
+        		<div class="wave" id="wave1"></div>
+    		</div>
+			<ul class="social">
+				<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-linkedin"><ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+			</ul>
+			<ul class="foo">
+				<li><a href="index.php">Главная</a></li>
+				<li><a href="o_kompanii.php">О компании</a></li>
+				<li><a href="partners.php">Партнеры</a></li>
+				<li><a href="dostavka.php">Доставка и оплата</a></li>
+			</ul>
+			<p>©2022 Читай. | Отвлекись от реальности</p>
+		</footer>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	
 </body>
 </html>
+
+<?php 
+if(array_key_exists('mark', $_POST)){
+	require_once ("Connections/shop.php");
+	$link = mysqli_connect($host, $username, $password);
+	$select = mysqli_select_db($link, $db);
+	$query = "insert into basket (`products_id`, `mark`) values ('$book_id', 'y');";
+	$select = mysqli_query($link, $query);
+	echo "<script>alert('Книга добавлена в закладки');</script>";
+}
+?>
 

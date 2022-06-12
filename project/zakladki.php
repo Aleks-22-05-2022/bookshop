@@ -34,78 +34,90 @@ if ($_GET['result'] != ''){
 	<?php
 }
 ?>
+
+<?php 
+	require_once ("Connections/shop.php");
+	$link = mysqli_connect($host, $username, $password);
+	$select = mysqli_select_db($link, $db);
+	$query = 'select * from basket where mark="y"';
+	$select = mysqli_query($link, $query);
+	$product = array();
+	$col = 0;
+	$photo = array();
+	$id = array();
+	$name = array();
+	$author = array();
+	$price = array();
+	while ($book1 = mysqli_fetch_array($select)){
+		$col += 1;
+		$product[$col] = $book1["products_id"];
+		$query1 = 'select * from products where id='.$book1["products_id"].'';
+		$select1 = mysqli_query($link, $query1);
+		while ($book = mysqli_fetch_array($select1)){
+			$photo[$col] = $book['url_photo']; 
+			$id[$col] = $book['id']; 
+			$name[$col] = $book['name_products']; 
+			$author[$col] = $book['author']; 
+			$price[$col] = $book['price_products']; 
+		}
+	}
+?>
 <html lang="ru">
     <head>
-        <meta charset="windows-1251">
-        <title>Читай</title>
+        <meta charset="utf-8">
+        <title>Р§РёС‚Р°Р№</title>
         <link rel="stylesheet" href="zakladki1.css">
     </head>
     <body>
         <header>
             <a href="../index.php"><img src="photo/logoza_ru.png" class="logo"></a>
-            <input type="text" placeholder="Поиск..." class="search"> <!--Нужно написать поиск по странице-->
+            <input type="text" placeholder="РџРѕРёСЃРє..." class="search"> <!--РќСѓР¶РЅРѕ РЅР°РїРёСЃР°С‚СЊ РїРѕРёСЃРє РїРѕ СЃС‚СЂР°РЅРёС†Рµ-->
             <input type="submit" value="&#128269;" class="searchSub">
             <img src="photo/cabinet.png" class="login"> 
             <div class="imgblock">
                 <a href=""><img src="photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
-                <span><?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
+                <span><?php echo $num; ?></span> <!-- РќСѓР¶РЅРѕ РїРѕС‚РѕРј СЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂРѕРІ РІ РєРѕСЂР·РёРЅРµ -->
             </div>
         </header>
         <nav class="menu">
-            <a href="categories.php?cat=Classic">Классика</a>
-            <a href="categories.php?cat=Psihologes">Психология</a>
-            <a href="categories.php?cat=Novel">Романы</a>
-            <a href="categories.php?cat=Fantasy">Фэнтези</a>
-            <a href="categories.php?cat=Children">Детская литература</a>
+            <a href="categories.php?cat=Classic">РљР»Р°СЃСЃРёРєР°</a>
+            <a href="categories.php?cat=Psihologes">РџСЃРёС…РѕР»РѕРіРёСЏ</a>
+            <a href="categories.php?cat=Novel">Р РѕРјР°РЅС‹</a>
+            <a href="categories.php?cat=Fantasy">Р¤СЌРЅС‚РµР·Рё</a>
+            <a href="categories.php?cat=Children">Р”РµС‚СЃРєР°СЏ Р»РёС‚РµСЂР°С‚СѓСЂР°</a>
         </nav>
 		
 		  <div class="obc">
     <nav class="menu1">
-        <div class="ramka"><a href="">Мои заказы</a></div>
-        <div class="ramka"><a href="">Понравившееся</a></div>
-        <div class="ramka"><a href="">Закладки</a></div>
-        <div class="ramka"><a href="">Выйти</a></div>
+        <div class="ramka"><a href="">РњРѕРё Р·Р°РєР°Р·С‹</a></div>
+        <div class="ramka"><a href="">РџРѕРЅСЂР°РІРёРІС€РµРµСЃСЏ</a></div>
+        <div class="ramka"><a href="">Р—Р°РєР»Р°РґРєРё</a></div>
+        <div class="ramka"><a href="">Р’С‹Р№С‚Рё</a></div>
    </nav>
    
    <div class="block-border card-block">
            <div class="group-title">
-               <a class="right"><span style="margin-right:0;" class="i-group-edit"></span></a><h2>Закладки</h2>
+               <a class="right"><span style="margin-right:0;" class="i-group-edit"></span></a><h2>Р—Р°РєР»Р°РґРєРё</h2>
            	</div>
            	<div class="with-pad">             
 				<div class="wrapper">
 				<figure>
-    			<div class='tovar'>
-					<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
-					<p class=NameBook><?php echo $name_b[$i], "<br>";?></p>
-					<p class="Author"><?php echo $author_b[$i], '<br>';?></p>
-					<div class="button">
-						<p class="Price"><?php echo $price_b[$i], " Рублей <br>";?> </p>
-						<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
-					</div>
-				</div>
-				</figure>
-					
-				<figure>
-				
-    			<div class='tovar'>
-					<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
-					<p class=NameBook><?php echo $name_b[$i], "<br>";?></p>
-					<p class="Author"><?php echo $author_b[$i], '<br>';?></p>
-					<div class="button">
-						<p class="Price"><?php echo $price_b[$i], " Рублей <br>";?> </p>
-						<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
-					</div>
-				</div>
-				</figure>
-				<figure>
-    			<div class='tovar'>
-					<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
-					<p class=NameBook><?php echo $name_b[$i], "<br>";?></p>
-					<p class="Author"><?php echo $author_b[$i], '<br>';?></p>
-					<div class="button">
-						<p class="Price"><?php echo $price_b[$i], " Рублей <br>";?> </p>
-						<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
-					</div>
+    			<div class="block">
+						<?php 
+						for($i = 1; $i < $col + 1; $i++){?>
+							<a href="str.php?book=<?php echo $id[$i];?>">
+								<div class='tovar'>
+									<img class="Pictures" src="<?php echo $photo[$i]?>"> <br>
+									<p class=NameBook><?php echo $name[$i], "<br>";?></p>
+									<p class="Author"><?php echo $author[$i], '<br>';?></p>
+									<div class="button">
+										<p class="Price"><?php echo $price[$i], " Р СѓР±Р»РµР№ <br>";?> </p>
+										<input type="button" value="РљСѓРїРёС‚СЊ"> <!--Р”РѕР±Р°РІР»РµРЅРёРµ РІ РєРѕСЂР·РёРЅСѓ РєРѕСЂР·РёРЅСѓ-->
+									</div>
+								</div>
+							</a><?php 
+						} 
+					?>
 				</div>
 				</figure>
 			</div>
@@ -117,3 +129,4 @@ if ($_GET['result'] != ''){
 					
     </body>
 </html>
+

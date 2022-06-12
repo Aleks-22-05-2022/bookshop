@@ -1,5 +1,20 @@
 
 <!DOCTYPE html>
+<?php  
+$session = fopen("session.txt", "r");
+if(file_get_contents("session.txt") != '') {
+	require_once ("Connections/shop.php");
+	$link = mysqli_connect($host, $username, $password);
+	$select = mysqli_select_db($link, $db);
+	$query = 'select * from users where id = '.file_get_contents("session.txt").'';
+	$select = mysqli_query($link, $query);
+	$name = mysqli_fetch_assoc($select);
+	$log = "<a href=\"lk.php\" class=\"log\">".$name['name']."</a>";
+} else {
+	$log = "<a href=\"log_in.php\" class=\"log\">Войти</a>";	
+}
+?>
+
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
@@ -68,6 +83,26 @@
 </div>
 
 </div>
+		<footer>
+		 	<div class="waves">
+        		<div class="wave" id="wave1"></div>
+    		</div>
+			<ul class="social">
+				<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-linkedin"><ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+			</ul>
+			<ul class="foo">
+				<li><a href="index.php">Главная</a></li>
+				<li><a href="o_kompanii.php">О компании</a></li>
+				<li><a href="partners.php">Партнеры</a></li>
+				<li><a href="dostavka.php">Доставка и оплата</a></li>
+			</ul>
+			<p>©2022 Читай. | Отвлекись от реальности</p>
+		</footer>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	
 	  </body>
 				</html>

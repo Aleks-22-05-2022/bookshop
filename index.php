@@ -1,6 +1,20 @@
 <!-- поиск -->
 
 <?php  
+$session = fopen("project/session.txt", "r");
+if(file_get_contents("project/session.txt") != '') {
+	require_once ("project/Connections/shop.php");
+	$link = mysqli_connect($host, $username, $password);
+	$select = mysqli_select_db($link, $db);
+	$query = 'select * from users where id = '.file_get_contents("project/session.txt").'';
+	$select = mysqli_query($link, $query);
+	$name = mysqli_fetch_assoc($select);
+	$log = "<a href=\"project/lk.php\" class=\"log\">".$name['name']."</a>";
+} else {
+	$log = "<a href=\"project/log_in.php\" class=\"log\">Войти</a>";	
+}
+
+
 if ($_GET['result'] != ''){
 	$query_search = $_GET['result'];
 	$query_search = trim($query_search); 
@@ -26,7 +40,7 @@ if ($_GET['result'] != ''){
             	<input type="submit" value="&#128269;" class="searchSub" >
 			</form>
             <img src="project/photo/cabinet.png" class="login"> 
-            <a href="" class="log">Войти</a>
+            <?php echo $log;?>
             <div class="imgblock">
                 <a href=""><img src="project/photo/Screenshot_7-removebg-preview.png" alt="Snow"></a>
                 <span>0<?php echo $num; ?></span> <!-- Нужно потом считать количество товаров в корзине -->
@@ -107,13 +121,9 @@ if ($_GET['result'] != ''){
 		
 		<script src="project/slider1.js"></script>
 		<h1 class="new">Бесселеры</h1>	
-			<div id="main1">
-				<div class="slider">
-					<div class="slide-list">
-						<div class="slide-wrap">
+			<div class="block">
 						<?php 
 						for($i = 1; $i < $col_b + 1; $i++){?>
-							<div class="slide-item">
 							<a href="project/str.php?book=<?php echo $id_b[$i];?>">
 								<div class='tovar'>
 									<img class="Pictures" src="<?php echo $photo_b[$i]?>"> <br>
@@ -124,17 +134,30 @@ if ($_GET['result'] != ''){
 										<input type="button" value="Купить"> <!--Добавление в корзину корзину-->
 									</div>
 								</div>
-							</a></div><?php 
+							</a><?php 
 						} 
-						?></div>
-						<div class="clear"></div>
-					</div>
-				<div class="navy prev-slide"></div>
-				<div class="navy next-slide"></div>
+					?>
 			</div>
-		</div>
 		<footer>
-		</footer>
+			 <div class="waves">
+				<div class="wave" id="wave1"></div>
+			</div>
+			<ul class="social">
+				<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-linkedin"><ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+			</ul>
+			<ul class="foo">
+				<li><a href="index.php">Главная</a></li>
+				<li><a href="project/o_kompanii.php">О компании</a></li>
+				<li><a href="project/partners.php">Партнеры</a></li>
+				<li><a href="project/dostavka.php">Доставка и оплата</a></li>
+			</ul>
+			<p>©2022 Читай. | Отвлекись от реальности</p>
+	</footer>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
 <!-- корзина -->
